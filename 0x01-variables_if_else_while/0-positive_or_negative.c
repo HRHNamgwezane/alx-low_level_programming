@@ -6,7 +6,8 @@
  * main - Determine if  number stored in variable n is positive or negative.
  *
  * Return: Always 0 (Success)
- */ 
+ */
+
 int main(void)
 {
 	int n;
