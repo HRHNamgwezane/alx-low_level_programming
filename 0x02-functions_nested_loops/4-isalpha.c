@@ -7,5 +7,14 @@
  */
 int _isalpha(int c)
 {
-	return ((c >= 'a' && c <= 'z') || (c >= 'A' && c >= 'Z'));
+	c = _isalpha('H');
+	_putchar(c + '0');
+	c = _isalpha('o');
+	_putchar(c + '0');
+	c = _isalpha(108);
+	_putchar(c + '0');
+	c = _isalpha(';');
+	_putchar(c + '0');
+	_putchar('\n');
+	return (0);
 }
