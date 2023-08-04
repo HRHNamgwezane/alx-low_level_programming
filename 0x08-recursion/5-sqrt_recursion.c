@@ -6,20 +6,12 @@
  *
  * Return: squareroot, (-1) Error
  */
-int _sqrt_recursion(int n, int i)
+int _sqrt_recursion(int n)
 {
-	if (i * i > n)
+	if (n < 0)
 	{
 		return (-1);
 	}
 
-	else if (i * i == n)
-	{
-		return (i);
-	}
-
-	else
-	{
-		return _sqrt_recursion(n, i + 1);
-	}
+	return _sqrt_recursion(n, 1);
 }
