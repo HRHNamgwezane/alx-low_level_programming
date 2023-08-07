@@ -8,6 +8,17 @@
  */
 int main(int argc, int char* argv[])
 {
-	printf("argc = %d\n", argc);
+	char *lastPathSeparator = strrchr(arg[0], '/');
+
+	if(lastPathSeparator != NULL)
+	{
+		printf("Program name: %s\n", lastPathSeparator + 1);
+		{
+			else
+			{
+				printf("Program name: %s\n", argv[0]);
+			}
+		}
+	}
 	return (0);
 }
