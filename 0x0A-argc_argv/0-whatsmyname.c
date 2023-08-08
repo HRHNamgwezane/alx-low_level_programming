@@ -7,7 +7,12 @@
  */
 int main(int argc, int char *argv[])
 {
-	printf("%s\n", argv[0]);
+	(void)argc;
+
+	if (argv[0] != NULL)
+	{
+		printf("%s\n", argv[0]);
+	}
 
 	return (0);
 }
