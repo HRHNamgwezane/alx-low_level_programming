@@ -5,7 +5,7 @@
  *
  * Return: program name
  */
-int main(int argc, int char* argv[])
+int main(int argc, int char *argv[])
 {
 	printf("%s\n", argv[0]);
 
