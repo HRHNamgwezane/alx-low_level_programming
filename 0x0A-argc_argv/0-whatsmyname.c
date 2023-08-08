@@ -1,7 +1,10 @@
 #include <stdio.h>
+#include "main.h"
 
 /**
  * Prgram that prints its name followed by a new line
+ * @argc: number of arguments
+ * @argv: array of arguments
  *
  * Return: program name
  */
