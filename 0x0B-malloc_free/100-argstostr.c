@@ -14,7 +14,7 @@ char *argstostr(int ac, char **av)
 {
 	int i = 0;
 	int j = 0;
-	int index = 0;
+	int conct_len = 0;
 	int sum_length = 0;
 	char *conctd;
 
@@ -29,12 +29,14 @@ char *argstostr(int ac, char **av)
 	if (conctd == NULL)
 		return (NULL);
 
-	for (j = 0; av[j][i] != '\0'; j++)
-		conctd[index++] = av[j][i];
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[j][i] != '\0'; j++)
+			conctd[conctd_len++] = av[j][i];
 
-	conctd[index++] = '\n';
-
-	conctd[index] = '\0';
+		conctd[conctd_len++] = '\n';
+	}
+	conctd[conctd_len] = '\0';
 
 	return (conctd);
 }
