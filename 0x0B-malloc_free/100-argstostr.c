@@ -24,7 +24,7 @@ char *argstostr(int ac, char **av)
 	for (i = 0; i < ac; i++)
 		sum_length += strlen(av[i]) + 1;
 
-	conctd = malloc(sum_length + 1);
+	conctd = malloc(sizeof(char)*(sum_length + 1));
 
 	if (conctd == NULL)
 		return (NULL);
