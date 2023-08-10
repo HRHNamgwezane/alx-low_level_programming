@@ -6,7 +6,7 @@
  * _atoi - convert string to int
  * @s: string converted
  *
- * Return: converted int 
+ * Return: converted int
  */
 int main(int argc, char *argv[])
 {
