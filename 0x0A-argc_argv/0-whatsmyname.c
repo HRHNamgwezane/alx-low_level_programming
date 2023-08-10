@@ -8,7 +8,7 @@
  *
  * Return: program name
  */
-int main(int argc, int char *argv[])
+int main(int argc, int char **argv[])
 {
 	(void)argc;
 
