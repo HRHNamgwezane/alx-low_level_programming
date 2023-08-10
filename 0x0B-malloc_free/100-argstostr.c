@@ -19,24 +19,31 @@ char *argstostr(int ac, char **av)
 	char *conctd;
 
 	if (ac == 0 || av == NULL)
+	{
 		return (NULL);
-
-	for (i = 0; i < ac; i++)
-		sum_length += strlen(av[i]) + 1;
-
-	conctd = malloc(sizeof(char)*(sum_length + 1));
-
-	if (conctd == NULL)
-		return (NULL);
+	}
 
 	for (i = 0; i < ac; i++)
 	{
-		for (j = 0; av[j][i] != '\0'; j++)
-			conctd[conctd_len++] = av[j][i];
+		sum_length += strlen(av[i]) + 1;
+	}
 
+	conctd = malloc(sizeof(char) * (sum_length + 1));
+
+	if (conctd == NULL)
+	{
+		return (NULL);
+	}
+
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j] != '\0'; j++)
+		{
+			conctd[conctd_len] = av[i][j];
+			conctd_len++;
+		}
 		conctd[conctd_len++] = '\n';
 	}
 	conctd[conctd_len] = '\0';
-
 	return (conctd);
 }
