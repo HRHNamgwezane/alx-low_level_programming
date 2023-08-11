@@ -13,7 +13,7 @@ void *malloc_checked(unsigned int b)
 
 	if (ptr == NULL)
 	{
-		fprintf(stderr, "Allocation of Memory failed");
+		free(ptr);
 		exit(98);
 	}
 	return (ptr);
