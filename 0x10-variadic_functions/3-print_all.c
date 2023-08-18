@@ -36,14 +36,14 @@ void print_all(const char * const format, ...)
 
 			case 's':
 				s = va_arg(args, char *);
-				if (s != NULL)
+				if (s == NULL)
 				{
-					printf("%s", s);
+					printf("(nil)");
 				}
 
 				else
 				{
-					printf("(nil)");
+					printf("%s", s);
 				}
 				break;
 			default:
