@@ -17,7 +17,7 @@ int _sqrt_recursion(int n)
 }
 
 /**
- * find_sqrt - recursively finds square root 
+ * find_sqrt - recursively finds square root
  * @n: number to calculate square root
  * @min: lower end of search range
  * @max: upper end of search range
