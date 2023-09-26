@@ -9,15 +9,17 @@
  */
 void print_dog(struct dog *d)
 {
+	const char *name;
+	const char *owner;
+
 	if (d == NULL)
 	{
 		printf("No dog to print. \n");
 		return;
 	}
 
-	name = (d-> != NULL) ? d->name : "(nil)";
+	name = (d->name != NULL) ? d->name : "(nil)";
 	owner = (d->owner != NULL) ? d->owner : "(nil)";
 
-	printf("Name: %s\nAge: %f\Owner: %s\n", name, d->age, owner);
+	printf("Name: %s\\nAge: %f\\Owner: %s\\n", name, d->age, owner);
 }
-
