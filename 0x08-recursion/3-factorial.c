@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * factorial - returns the factorial of a number
+ * factorial - returns the factorial of a number using recursion
  * @n: number to return the factorial from
  *
  * Return: factorial of n
@@ -9,11 +9,10 @@
 int factorial(int n)
 {
 	if (n < 0)
-		return -1;
-	while (n > 0)
-	{
-		result *= n;
-		n--;
-	}
-	return result;
+		return (-1);
+
+	if (n == 0 || n == 1)
+		return (1);
+
+	return (n * factorial(n - 1));
 }
