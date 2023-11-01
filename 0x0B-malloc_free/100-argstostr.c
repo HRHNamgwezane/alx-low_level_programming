@@ -13,6 +13,7 @@ char *argstostr(int ac, char **av)
 	int total_length = 0;
 	int i;
 	int current_index = 0;
+	char *result = malloc(total_length);
 
 	if (ac <= 0 || av == NULL)
 		return (NULL);
@@ -28,7 +29,6 @@ char *argstostr(int ac, char **av)
 		}
 		total_length++;
 	}
-	char *result = malloc(total_length);
 
 	if (result == NULL)
 		return (NULL);
