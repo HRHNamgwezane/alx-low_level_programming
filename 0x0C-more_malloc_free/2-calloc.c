@@ -13,20 +13,20 @@
 void *_calloc(unsigned int nmemb, unsigned int size)
 {
 	void *mem;
+	char *filler;
 	unsigned int i;
-	char *filler = mem;
-
-	if (nmemb == 0 || size == 0)
-		return (NULL);
-
 	mem = malloc(size * nmemb);
+	filler = mem;
 
-	if (mem != NULL)
-	{
-		for (i = 0; i < (size * nmemb); i++)
-			filler[i] = '\0';
-	}
+    if (nmemb == 0 || size == 0)
+        return (NULL);
 
-	return (mem);
+    if (mem != NULL)
+    {
+	    for (i = 0; i < (size * nmemb); i++)
+		    filler[i] = '\0';
+    }
+
+    return (mem);
 }
 
