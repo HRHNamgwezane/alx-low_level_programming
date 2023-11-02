@@ -10,8 +10,7 @@
  */
 int main(int argc, char *argv[])
 {
-	char *programName = argv[0];
-	printf("%s\n", programName);
+	printf("%s\n", *argv);
 
 	return (0);
 }
