@@ -5,7 +5,6 @@
 /**
  * is_all_digits - check if a string consists of digits only
  * @str: input string
- * 
  * Return: 1 if all characters are digits, 0 otherwise
  */
 int is_all_digits(char *str)
