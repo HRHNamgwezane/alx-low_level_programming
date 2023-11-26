@@ -26,10 +26,9 @@ unsigned long int _pow(unsigned int base, unsigned int power)
  */
 void print_binary(unsigned long int n)
 {
-	
 	int flag = 0;
 	int i;
-	
+
 	for (i = sizeof(unsigned long int) * 8 - 1; i >= 0; i--)
 	{
 		unsigned long int mask = _pow(2, i);
