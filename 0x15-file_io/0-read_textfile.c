@@ -1,7 +1,9 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * read_textfile - reads a text file and prints it to the POSIX standard output
+ * read_textfile - reads a text file and prints its contents to the standard output
  * @filename: name of the file to read
  * @letters: number of letters to read and print
  *
@@ -9,38 +11,34 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd = open(filename, O_RDONLY);
-	char *buffer = malloc(letters);
-	ssize_t bytes_read = read(fd, buffer, letters);
-	ssize_t bytes_written = write(STDOUT_FILENO, buffer, bytes_read);
+	FILE *fp = fopen(filename, "r");
+	char *buffer = malloc(sizeof(char) * (letters + 1));
+	ssize_t bytes_read = fread(buffer, sizeof(char), letters, fp);
 
 	if (filename == NULL)
 		return (0);
 
-	if (fd == -1)
+	if (fp == NULL)
 		return (0);
 
 	if (buffer == NULL)
 	{
-		close(fd);
+		fclose(fp);
 		return (0);
 	}
 
-	if (bytes_read == -1)
+	if (bytes_read == 0)
 	{
 		free(buffer);
-		close(fd);
-		return 0;
-	}
-
-	if (bytes_written == -1 || bytes_written != bytes_read)
-	{
-		free(buffer);
-		close(fd);
+		fclose(fp);
 		return (0);
 	}
+
+	buffer[bytes_read] = '\0';
+	printf("%s", buffer);
 
 	free(buffer);
-	close(fd);
-	return (bytes_written);
+	fclose(fp);
+
+	return (bytes_read);
 }
