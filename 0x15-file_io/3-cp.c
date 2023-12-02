@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 	{
 		exit_with_error(98, "Error: Can't read from file %s\n", argv[1]);
 	}
-	
+
 	file_to = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (file_to == -1)
 	{
@@ -45,8 +45,7 @@ int main(int argc, char *argv[])
 		exit_with_error(99, "Error: Can't write to %s\n", argv[2]);
 	}
 
-	do
-	{
+	do {
 		nchars = read(file_from, buf, 1024);
 		if (nchars == -1)
 		{
@@ -63,6 +62,7 @@ int main(int argc, char *argv[])
 			exit_with_error(99, "Error: Can't write to %s\n", argv[2]);
 		}
 	}
+
 	while (nchars == 1024);
 
 	err_close = close(file_from);
